@@ -2,10 +2,8 @@
 #include <algorithm>
 #include <string>
 #include <cstddef>
-#include <cstring>
 
 #include "Font5x7.h"
-#include "DektecLogoData.h"
 
 #include "DektecFrameConverter.h"
 
@@ -54,7 +52,6 @@ const std::vector<uint8_t>& UYVYFrameGenerator::renderFromBase(
 {
     uyvy = baseFrame;
 
-    drawDektecLogo();
     drawBouncingBox(boxX, boxY);
     drawLabelPlaceholder(label);
 
@@ -248,47 +245,6 @@ void UYVYFrameGenerator::drawLabelPlaceholder(
         white);
 }
 
-void UYVYFrameGenerator::drawDektecLogo()
-{
-    constexpr int rightMargin = 40;
-    constexpr int topMargin = 40;
-
-    int logoX =
-        W - DektecLogo::Width - rightMargin;
-
-    const int logoY = topMargin;
-
-    // UYVY 4:2:2 works in two-pixel groups, so keep X even.
-    if (logoX & 1)
-        --logoX;
-
-    if (logoX < 0 ||
-        logoY < 0 ||
-        logoX + DektecLogo::Width > W ||
-        logoY + DektecLogo::Height > H)
-    {
-        return;
-    }
-
-    for (int y = 0;
-         y < DektecLogo::Height;
-         ++y)
-    {
-        const std::size_t destinationOffset =
-            static_cast<std::size_t>(logoY + y) *
-                static_cast<std::size_t>(W) * 2 +
-            static_cast<std::size_t>(logoX) * 2;
-
-        const std::size_t sourceOffset =
-            static_cast<std::size_t>(y) *
-            DektecLogo::RowBytes;
-
-        std::memcpy(
-            uyvy.data() + destinationOffset,
-            DektecLogo::Uyvy.data() + sourceOffset,
-            DektecLogo::RowBytes);
-    }
-}
 
 void UYVYFrameGenerator::drawCharacter(
     int x,

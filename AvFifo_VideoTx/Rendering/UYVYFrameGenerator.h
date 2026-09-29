@@ -56,11 +56,6 @@ private:
     void drawBouncingBox(int boxX, int boxY);
     void drawLabelPlaceholder(const std::string& label);
 
-    // Draws the embedded DekTec logo onto the current UYVY frame.
-    // This is called while preparing the static channel backgrounds,
-    // so it has no cost in the real-time transmit loop.
-    void drawDektecLogo();
-
     void setPixelPair(int x, int y, YUV p0, YUV p1);
     void drawRect(int x0, int y0, int w, int h, YUV colour);
 
