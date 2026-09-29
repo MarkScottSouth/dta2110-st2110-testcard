@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AvFifo_VideoTx", "AvFifo_VideoTx\AvFifo_VideoTx.vcxproj", "{ED562D3B-5C08-40E6-AD4A-F90158E071B2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AvFifo_PktTiming", "AvFifo_PktTiming\AvFifo_PktTiming.vcxproj", "{01EC4C92-7CBB-465F-B082-3ACEE8FA1102}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED562D3B-5C08-40E6-AD4A-F90158E071B2}.Debug|x64.ActiveCfg = Debug|x64
+		{ED562D3B-5C08-40E6-AD4A-F90158E071B2}.Debug|x64.Build.0 = Debug|x64
+		{ED562D3B-5C08-40E6-AD4A-F90158E071B2}.Release|x64.ActiveCfg = Release|x64
+		{ED562D3B-5C08-40E6-AD4A-F90158E071B2}.Release|x64.Build.0 = Release|x64
+		{01EC4C92-7CBB-465F-B082-3ACEE8FA1102}.Debug|x64.ActiveCfg = Debug|x64
+		{01EC4C92-7CBB-465F-B082-3ACEE8FA1102}.Debug|x64.Build.0 = Debug|x64
+		{01EC4C92-7CBB-465F-B082-3ACEE8FA1102}.Release|x64.ActiveCfg = Release|x64
+		{01EC4C92-7CBB-465F-B082-3ACEE8FA1102}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA7F78BD-1647-4B2D-AF5B-670113997458}
+	EndGlobalSection
+EndGlobal
